@@ -1,0 +1,4 @@
+
+BOT_TOKEN = ""
+PREFIX = "!"
+LOGGING_LEVEL = "WARNING"
