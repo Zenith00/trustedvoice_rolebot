@@ -64,11 +64,26 @@ class Command:
         await self.func(ctx)
         [await post(ctx) for post in self.posts]
 
+
 class Contexter:
     def __init__(self, message):
         self.m = message
 
     def find_role(self, query):
+        if CONFIG.ROLE_BY_CONFIG:
+            return self.find_role_config(query)
+        else:
+            return self.find_role_dynamic(query)
+
+    @staticmethod
+    def find_role_config(query):
+        if query in CONFIG.ROLE_TO_ID.keys():
+            return CONFIG.ROLE_TO_ID[query]
+        elif query.lower() in CONFIG.ciROLE_TO_ID.keys():
+            return CONFIG.ciROLE_TO_ID[query.lower()]
+        raise Exception(f"Role: [{query}] not found in config")
+
+    def find_role_dynamic(self, query):
         if isinstance(query, int):
             return next(role for role in self.m.guild.roles if role.id == query)
         if isinstance(query, str):

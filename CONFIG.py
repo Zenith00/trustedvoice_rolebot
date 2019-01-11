@@ -2,6 +2,9 @@ BOT_TOKEN = ""
 PREFIX = "!"
 LOGGING_LEVEL = "INFO"
 ACK_TYPE = "react"
+ROLE_BY_CONFIG = True
+
+
 ROLE_TO_ID = {"SR_Shrubbery_Hiraeth"       : 533038573792919553,
               "SR_Shrubbery_Grey"          : 533028882035769374,
               "SRSuzuya𝖚𝖓𝖙𝖎𝖙𝖑𝖊𝖉"             : 532990712325865492,
