@@ -98,19 +98,19 @@ async def deoffering(ctx):
 
 # Seeking
 @client.command(ack=CONFIG.ACK_TYPE)
-async def seeking(ctx: Contexter):
-    await ctx.m.author.add_roles(ctx.find_role("seeking"))
+async def looking(ctx: Contexter):
+    await ctx.m.author.add_roles(ctx.find_role("looking"))
 
 @client.command(ack=CONFIG.ACK_TYPE)
-async def seekingt(ctx: Contexter):
-    if ctx.find_role("seeking") in ctx.m.author.roles:
-        await ctx.m.author.remove_roles(ctx.find_role("seeking"))
+async def lookingt(ctx: Contexter):
+    if ctx.find_role("looking") in ctx.m.author.roles:
+        await ctx.m.author.remove_roles(ctx.find_role("looking"))
     else:
-        await ctx.m.author.add_roles(ctx.find_role("seeking"))
+        await ctx.m.author.add_roles(ctx.find_role("looking"))
 
-@client.command(name="-seeking", ack=CONFIG.ACK_TYPE)
-async def deseeking(ctx):
-    await ctx.m.author.remove_roles(ctx.find_role("seeking"))
+@client.command(name="-looking", ack=CONFIG.ACK_TYPE)
+async def delooking(ctx):
+    await ctx.m.author.remove_roles(ctx.find_role("looking"))
 
 
 
