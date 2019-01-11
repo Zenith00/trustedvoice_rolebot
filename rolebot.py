@@ -75,12 +75,11 @@ class Contexter:
         else:
             return self.find_role_dynamic(query)
 
-    @staticmethod
-    def find_role_config(query):
+    def find_role_config(self, query):
         if query in CONFIG.ROLE_TO_ID.keys():
-            return CONFIG.ROLE_TO_ID[query]
+            return self.m.guild.get_role(CONFIG.ROLE_TO_ID[query])
         elif query.lower() in CONFIG.ciROLE_TO_ID.keys():
-            return CONFIG.ciROLE_TO_ID[query.lower()]
+            return self.m.guild.get_role(CONFIG.ciROLE_TO_ID[query.lower()])
         raise Exception(f"Role: [{query}] not found in config")
 
     def find_role_dynamic(self, query):
