@@ -24,6 +24,8 @@ class MicroClient(discord.Client):
             command_raw = message.content[len(CONFIG.PREFIX):].lower()
             if command_raw in self.commands:
                 await self.commands[command_raw].execute(Contexter(message))
+            elif command_raw.split(" ")[0] in self.commands:
+                await self.commands[command_raw.split(" ")[0]].execute(Contexter(message))
 
     @zutils.parametrized
     def command(func, self, name: str = None, **attrs):
