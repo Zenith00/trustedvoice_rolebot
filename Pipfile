@@ -1,14 +1,12 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-"discord.py" = {extras = ["voice"],git = "https://github.com/Rapptz/discord.py",ref = "rewrite"}
-discord = "*"
-websockets = "*"
 
 [dev-packages]
+
+[packages]
+discord-py = {extras = ["voice"],git = "https://github.com/Rapptz/discord.py",ref = "rewrite"}
 
 [requires]
 python_version = "3.6"
