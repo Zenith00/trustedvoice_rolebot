@@ -59,10 +59,11 @@
             "ref": "7f4c57dd5ad20b7fa10aea485f674a4bc24b9547"
         },
         "discord.py": {
-            "hashes": [
-                "sha256:17fb8814100fbaf7a79468baa432184db6cef3bbea4ad194fe297c7407d50108"
+            "extras": [
+                "voice"
             ],
-            "version": "==0.16.12"
+            "git": "https://github.com/Rapptz/discord.py",
+            "ref": "rewrite"
         },
         "multidict": {
             "hashes": [
